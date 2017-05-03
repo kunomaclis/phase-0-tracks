@@ -8,7 +8,9 @@
     margin-top: 10px;
     border-radius: 15px;
 }
-
+/*Answered Prompt 2.2 by including multiple colors in /smaller-text to cascade through*/
 .smaller-text {
     font-size: .8em;
+    color: blueviolet;
+    color: greenyellow;
 }
