@@ -1,0 +1,31 @@
+#contact-info {
+    font-size: .8em
+}
+
+.job {
+    background-color: #e9e5dc;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+/*Answered Prompt 2.1 by including multiple colors in /smaller-text to cascade through*/
+.smaller-text {
+    font-size: .8em;
+    color: blueviolet;
+    color: blue;
+}
+/*Answer to prompt 2.2 pseudo-selector*/
+p:first-child {
+    color: red;
+}
+/*Answer to prompt 2.3*/
+
+p:last-child {
+    font-style: italic;
+}
+
+ul > ::first-letter {
+    font-size: 1.2em;
+     font-weight: bold;
+     color: green;
+}
