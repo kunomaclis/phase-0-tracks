@@ -1,0 +1,28 @@
+.center {
+  position: relative;
+  margin-left: 40%;
+  margin-top: 10%;
+}
+
+.hat {
+  position: absolute;
+  z-index: +1;
+  left: -20px;
+  top: -65px;
+}
+
+.glasses {
+  position: absolute;
+  z-index: +1;
+  left: 45px;
+  top: 100px;
+}
+
+h1 {
+  background-color: firebrick;
+  color: whitesmoke;
+  max-width: 50%;
+  border-radius: 4px;
+  text-align: center;
+  text-shadow: 2px 2px royalblue;
+}
