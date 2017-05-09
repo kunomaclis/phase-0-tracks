@@ -1,0 +1,34 @@
+Elevator Robot Pseudo-Gorithm 
+
+-Elevator-entry = 1..50
+-Command(n)
+
+-Until command is received
+-- Welcome new passenger
+-- wait three seconds
+
+- if command(n) == Elevator-entry.
+--  search Elevator-entry number for transportation
+
+- if command(n) != Elevator-entry.
+-- respond with "Sorry, I didn't understand that."
+
+Common Problem algorithm
+
+Taking out the trash
+
+-If trash = true
+-- dispose of trash
+
+-If trashcan-full = true
+-- dispose of trashcan and replace trashbag
+
+-If day-of-week == (Tues)
+--Take trashcan outside for garbage pickup
+
+if trash = false
+--Do nothing
+
+
+
+
