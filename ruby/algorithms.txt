@@ -13,6 +13,22 @@ Elevator Robot Pseudo-Gorithm
 - if command(n) != Elevator-entry.
 -- respond with "Sorry, I didn't understand that."
 
+Common Problem algorithm
+
+Taking out the trash
+
+-If trash = true
+-- dispose of trash
+
+-If trashcan-full = true
+-- dispose of trashcan and replace trashbag
+
+-If day-of-week == (Tues)
+--Take trashcan outside for garbage pickup
+
+if trash = false
+--Do nothing
+
 
 
 
