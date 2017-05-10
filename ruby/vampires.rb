@@ -7,32 +7,32 @@ vampire = false
 vampire = true if name == 'Drake Cula' || name == 'Tu Fang'
 
 puts 'How old are you? What year were you born?'
-age = Integer(gets.chomp)
-age_okay = false
-age_okay = true if age < 100
+age_range = Integer(gets.chomp)
+age = false
+age = true if age_range < 100
 
 puts 'Our company cafeteria serves garlic bread. Should we order some for you?'
 garlic_preference = gets.chomp
-garlic_yes = false
-garlic_yes = true if garlic_preference == 'yes' || garlic_preference == 'y'
+garlic = false
+garlic = true if garlic_preference == 'yes' || garlic_preference == 'y'
 
 puts "Would you like to enroll in the company's health insurance?"
-insurance = gets.chomp
-yes_insurance = false
-yes_insurance = true if insurance == 'yes' || insurance == 'y'
+insurance_status = gets.chomp
+insurance = false
+insurance = true if insurance_status == 'yes' || insurance_status == 'y'
 
 # The results and sorting algorithms (How can I make the lines shorter?!?!)
 
-if vampire == false && age_okay && garlic_yes && yes_insurance
+if vampire == true
+  puts 'Definitely a vampire'
+elsif vampire == false && age && garlic && insurance
   puts 'Probably not a vampire'
-elsif vampire == false && (age_okay == false && garlic_yes == false && yes_insurance == false)
+elsif vampire == false && (age == false && garlic == false && insurance == false)
   puts 'Almost certainly a vampire'
-elsif vampire == false && age_okay != true || garlic_yes != true || yes_insurance != true
+elsif vampire == false && age != true || garlic != true || insurance != true
   puts 'Probably a vampire'
 else
   puts 'results inconclusive'
 end
 
 # end condition
-
-puts 'Definitely a vampire' if vampire == true
