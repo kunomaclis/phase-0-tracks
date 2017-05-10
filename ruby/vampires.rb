@@ -23,17 +23,16 @@ yes_insurance = true if insurance == 'yes' || insurance == 'y'
 
 # The results and sorting algorithms (How can I make the lines shorter?!?!)
 
-if vampire == false  && age_okay && garlic_yes && yes_insurance
+if vampire == false && age_okay && garlic_yes && yes_insurance
   puts 'Probably not a vampire'
-end
-
-if vampire == false && age_okay != true || garlic_yes != true || yes_insurance != true
-  puts 'Probably a vampire'
-end
-
-if vampire == false && (age_okay == false && garlic_yes == false && yes_insurance == false)
+elsif vampire == false && (age_okay == false && garlic_yes == false && yes_insurance == false)
   puts 'Almost certainly a vampire'
+elsif vampire == false && age_okay != true || garlic_yes != true || yes_insurance != true
+  puts 'Probably a vampire'
+else
+  puts 'results inconclusive'
 end
+
 # end condition
 
 puts 'Definitely a vampire' if vampire == true
