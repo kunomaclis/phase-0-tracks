@@ -1,6 +1,11 @@
 # Vampire Detector Quiz + condition
-# The Quiz
 
+# release 4 loop
+puts 'How many are we interviewing?'
+applicants = Integer(gets.chomp)
+
+until applicants == 0
+# The Quiz
 puts "Welcome to Werewolf Inc. What's your name?"
 name = gets.chomp
 vampire = false
@@ -33,6 +38,10 @@ elsif vampire == false && age != true || garlic != true || insurance != true
   puts 'Probably a vampire'
 else
   puts 'results inconclusive'
+end
+
+applicants -= 1
+
 end
 
 # end condition
