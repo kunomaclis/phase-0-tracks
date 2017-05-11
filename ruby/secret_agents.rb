@@ -58,21 +58,22 @@ end
 
 # correct choice sorter
 
-choice = ''
+choice = ""
 puts 'Greetings, Agent. Would you like to encrypt or decrypt a password?'
 choice = gets.chomp
-until choice == 'encrypt' || 'decrypt'
-    puts "What? Type 'decrypt' or 'encrypt', agent"
+until choice == "encrypt"|| choice == "decrypt"
+  puts "What? Type 'decrypt' or 'encrypt', agent"
+  choice = gets.chomp
 end
 
 # program
 
-puts "enter a password."
+puts 'enter a password.'
 
 password = gets.chomp
 
 if choice == 'encrypt'
-    puts encrypt(password)
+  puts encrypt(password)
 elsif choice == 'decrypt'
-    puts decrypt(password)
+  puts decrypt(password)
 end
