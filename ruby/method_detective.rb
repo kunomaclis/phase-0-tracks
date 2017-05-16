@@ -7,25 +7,25 @@
 # "iNvEsTiGaTiOn".<???>
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+# "zom".insert(-2, 'o')
 # => “zoom”
 
-# "enhance".<???>
+# "enhance".center(18)""
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+# "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+# "The usual".insert(-1, " suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+# " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+# "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+# "The mystery of the missing first letter".gsub(/^./, "")
 # => "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!".<???>

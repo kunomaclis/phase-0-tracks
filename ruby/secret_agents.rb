@@ -58,10 +58,10 @@ end
 
 # correct choice sorter
 
-choice = ""
+choice = ''
 puts 'Greetings, Agent. Would you like to encrypt or decrypt a password?'
 choice = gets.chomp
-until choice == "encrypt"|| choice == "decrypt"
+until choice == 'encrypt' || choice == 'decrypt'
   puts "What? Type 'decrypt' or 'encrypt', agent"
   choice = gets.chomp
 end
@@ -70,7 +70,7 @@ end
 
 puts 'enter a password.'
 
-password = gets.chomp
+password = gets.chomp.downcase
 
 if choice == 'encrypt'
   puts encrypt(password)
