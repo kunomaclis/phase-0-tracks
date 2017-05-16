@@ -10,7 +10,7 @@
 # "zom".insert(-2, 'o')
 # => “zoom”
 
-# "enhance".center(18)""
+# "enhance".center(18)
 # => "    enhance    "
 
 # "Stop! You’re under arrest!".upcase
@@ -28,12 +28,12 @@
 # "The mystery of the missing first letter".gsub(/^./, "")
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+# "Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
-# => 122 
-# (What is the significance of the number 122 in relation to the character z?)
+# "z".ord
+# => 122
+# 122 is the ASCII character number for the letter "z" in Ruby
 
-# "How many times does the letter 'a' appear in this string?".<???>
+# "How many times does the letter 'a' appear in this string?".count('a')
 # => 4
