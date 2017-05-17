@@ -25,7 +25,31 @@ puts 'First, there were dinos:'
 puts dinos
 
 puts 'Then came the meteor!'
-dinos.map! do |target|
+dinos.map! do |_target|
   'Extinct.'
 end
 
+puts dinos
+
+#----------------------------- Example Array modifiers
+
+numbers = [1, 3, 5, 10, 20]
+
+# puts numbers.delete_if { |number| number <= 10 }
+
+# puts numbers.keep_if { |number| number < 5}
+
+#------------------------------- End Array Examples and begin hash examples
+
+hash_letternum = {
+  'a' => 1,
+  'b' => 2,
+  'c' => 3,
+  'd' => 4
+}
+
+# puts hash_letternum.fetch('a')
+
+#puts hash_letternum.reject { |key, value| value < 3}
+
+#--------------------------------- End Hash Examples
