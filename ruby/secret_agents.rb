@@ -77,3 +77,4 @@ if choice == 'encrypt'
 elsif choice == 'decrypt'
   puts decrypt(password)
 end
+
