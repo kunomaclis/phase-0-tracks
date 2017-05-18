@@ -50,6 +50,6 @@ hash_letternum = {
 
 # puts hash_letternum.fetch('a')
 
-#puts hash_letternum.reject { |key, value| value < 3}
+puts hash_letternum.reject { |key, value| value < 3}
 
 #--------------------------------- End Hash Examples
