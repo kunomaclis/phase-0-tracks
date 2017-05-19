@@ -24,10 +24,3 @@ end
 
 p agent_namer
 
-def vowel_scrambler(str)
-  scrambled_string = str.tr('aeiouAEIOU', 'eiouaEIOUA')
-end
-
-def consonant_scrambler(str)
-  scrambled_string = str.tr('bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ', 'cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZB')
-end
