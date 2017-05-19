@@ -23,11 +23,12 @@ def agent_namer
     # Store that data in an agents hash!!!
     agents.store(response, scrambled_consonents)
 
-    puts "#{response}, your new name is #{scrambled_consonents}"
+    puts "your new name is #{scrambled_consonents}"
 
   end
   puts "Okay, here's a list of our current agents that have been scrambled through this session:"
-  puts agents
+  # Print em all out! How the HECK do I hide the hash summary after the printed one? It's cool to see what the hash looks like but I'd like it to be hidden from the user
+  agents.each { |x, y| puts "#{x} is actually #{y}" }
 end
 
 p agent_namer
