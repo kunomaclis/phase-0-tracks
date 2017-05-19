@@ -16,8 +16,18 @@ def agent_namer
   # flip first and last names
   agent_name = gets.chomp.reverse.split(/\s+/, 2).collect(&:reverse).join(' ')
   # first scramble vowels
-  scrambled_vowel = agent_name.tr("aeiouAEIOU", "uaeioUAEIO")
+  scrambled_vowel = agent_name.tr('aeiouAEIOU', 'eiouaEIOUA')
   # then scramble consonents
+  p scrambled_vowel
+  scrambed_consonents = scrambled_vowel.tr('bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ', 'cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZB')
 end
 
 p agent_namer
+
+def vowel_scrambler(str)
+  scrambled_string = str.tr('aeiouAEIOU', 'eiouaEIOUA')
+end
+
+def consonant_scrambler(str)
+  scrambled_string = str.tr('bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ', 'cdfghjklmnpqrstvwxyzbCDFGHJKLMNPQRSTVWXYZB')
+end
