@@ -79,7 +79,7 @@ extinct_animals = {
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
 
-p extinct_animals.select { |_key, value| value <= 2000 }
+# p extinct_animals.select { |_key, value| value <= 2000 }
 
 # --------------------------------------------------------------------------
 
@@ -87,7 +87,18 @@ p extinct_animals.select { |_key, value| value <= 2000 }
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
-# ----
+
+# extinct_animals.replace(
+#   'Tasmanian Tiger' => 1933,
+#   'Eastern Hare Wallaby' => 1887,
+#   'Dodo' => 1659,
+#   'Pyrenean Ibex' => 1997,
+#   'Passenger Pigeon' => 1911,
+#   'West African Black Rhinoceros' => 2009,
+#   'Laysan Crake' => 1920
+# )
+
+# puts extinct_animals
 
 # --------------------------------------------------------------------------
 
@@ -97,7 +108,24 @@ p extinct_animals.select { |_key, value| value <= 2000 }
 # "Dodo"
 # "Saiga Antelope"
 # Do not use any special built-in methods.
-# ----
+
+# if extinct_animals.include?('Andean Cat')
+#   puts 'I FOUND THE CAT'
+# else
+#   puts "WHAT'S A CAT?"
+# end
+
+# if extinct_animals.include?('Dodo')
+#   puts 'I FOUND A DODO'
+# else
+#   puts "WHAT'S A DODO?"
+# end
+
+# if extinct_animals.include? 'Saiga Antelope'
+#   puts 'I found an ANTELOPE'
+# else
+#   puts "WHAT'S AN ANTELOPE?!?"
+# end
 
 # --------------------------------------------------------------------------
 
@@ -105,5 +133,9 @@ p extinct_animals.select { |_key, value| value <= 2000 }
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
-# ----
-# --------------------------------------------------------------------------
+
+print extinct_animals.assoc('Passenger Pigeon')
+
+print extinct_animals.delete('Passenger Pigeon', 1914)
+
+#--------------------------------------------------------------------------
