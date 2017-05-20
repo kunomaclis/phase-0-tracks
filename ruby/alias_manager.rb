@@ -31,4 +31,4 @@ def agent_namer
   agents.each { |x, y| puts "#{x} is actually #{y}" }
 end
 
-p agent_namer
+agent_namer
