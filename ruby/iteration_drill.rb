@@ -55,7 +55,7 @@ check_list('batteries')
 # leaving only 5. Do not use any special built-in methods.
 
 zombie_apocalypse_supplies.slice!(0..2)
-# print zombie_apocalypse_supplies
+print zombie_apocalypse_supplies
 
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
