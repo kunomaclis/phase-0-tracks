@@ -1,4 +1,9 @@
 class Santa
+
+  attr_reader :age, :ethnicity
+
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
@@ -15,23 +20,15 @@ class Santa
     puts "That was a good #{cookie}!"
   end
 
-  # getter methods for attributes
-  attr_reader :age
-
-  attr_reader :ethnicity
-
   # setter methods
-  def celebrate_birthday=(_integer)
-    @age + 1
+  def celebrate_birthday(num)
+    @age += 1 * num
   end
 
   def get_mad_at=(reindeer)
     @reindeer_ranking.rotate(reindeer)
   end
 
-  def gender_bender=(new_gender)
-    @gender = new_gender
-  end
 end
 
 # Initial driver code
@@ -47,8 +44,3 @@ end
 # example_genders.length.times do |i|
 #   santas << Santa.new(example_genders[i], example_ethnicities[i],)
 # end
-
-santa = Santa.new('female', 'white')
-santa.speak
-santa.gender_bender= "male"
-
