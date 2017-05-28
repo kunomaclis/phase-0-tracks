@@ -2,15 +2,12 @@ class Game
   attr_reader :blanks_filled, :guess_count, :is_over
 
   def initialize(secret_word)
-    @secret_word = secret_word
+    @secret_word = secret_word.to_str
+    @secret_word = @secret_word.split('')
     @guess_count = secret_word.length
     @is_over = false
     @blanks_filled = '_' * @secret_word.length
     @blanks_filled = @blanks_filled.split('')
-  end
-
-  def split
-    @secret_word = @secret_word.split('')
   end
 
   def compare(guessed_word)
@@ -26,8 +23,6 @@ class Game
   end
 end
 
-puts "Let's try this out"
-test = Game.new('Porcelein')
-
-puts 'Now to cover up the word...'
-test.split
+puts "Let's try this out, give me a secret word:"
+user_input = gets.chomp
+test = Game.new(user_input)
