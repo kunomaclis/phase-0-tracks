@@ -6,23 +6,27 @@ class Game
     @secret_word = @secret_word.split('')
     @guess_count = secret_word.length
     @is_over = false
-    @blanks_filled = '_' * @secret_word.length
-    @blanks_filled = @blanks_filled.split('')
+    @dashes = '_' * @secret_word.length
+    @dashes = @dashes.split('')
   end
 
-  def compare(guessed_word)
-    @guessed_word = guessed_word.split('')
+  def compare(user_guess)
+    @guessed_word = user_guess.split('')
     @guess_count -= 1
-    @guessed_word.each do |letter|
-      if @guessed_word[letter] == @secret_word[letter]
-        @blanks_filled.map { |_x| x = @guessed_word[letter] }
-      else
-        puts 'idk'
+    @secret_word.each do |letter|
+      if @guessed_word.include?(letter)
+        @index_matcher = @guessed_word.index(letter)
+        @dashes[@index_matcher] = letter
       end
     end
+    p @dashes
   end
 end
 
 puts "Let's try this out, give me a secret word:"
 user_input = gets.chomp
 test = Game.new(user_input)
+
+puts 'Guess a word for me:'
+user_guess = gets.chomp.to_str
+test.compare(user_guess)
