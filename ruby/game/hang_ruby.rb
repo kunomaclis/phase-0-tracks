@@ -1,10 +1,10 @@
 class Game
-  attr_accessor :guess_count, :is_over, :dashes, :history
+  attr_accessor :guess_count, :is_over, :dashes, :history, :secret_word
 
   def initialize(word)
     @secret_word = word.to_str
     @secret_word = @secret_word.split('')
-    @guess_count = @secret_word.length
+    @guess_count = @secret_word.length - 1
     @dashes = '_' * @secret_word.length
     @dashes = @dashes.split('')
   end
