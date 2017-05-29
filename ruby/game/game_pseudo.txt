@@ -10,5 +10,7 @@
 
 - Continual feedback of word being filled in for correct letters. Letters correlate to portions of array
 
+- Guessed word will look to Secret Word array to find same letters. Then replace _ with letters
+
 - If user guesses word without running out of guesses. Game prints "Good job!!!" if not, it prints 'Try again loser." 
 
