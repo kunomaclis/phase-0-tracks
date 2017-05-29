@@ -1,0 +1,16 @@
+# How this game should work (HangRuby)
+
+- user1 inputs a secret word
+
+- Secret word is INITIALIZED with a guess COUNT equal to the word length
+
+- User2 will need to guess the word. 
+
+- Secret word letters will be broken into an array to allocate for each blank segment of a word broken up by "_" repeated guesses don't count for a guess
+
+- Continual feedback of word being filled in for correct letters. Letters correlate to portions of array
+
+- Guessed word will look to Secret Word array to find same letters. Then replace _ with letters
+
+- If user guesses word without running out of guesses. Game prints "Good job!!!" if not, it prints 'Try again loser." 
+
