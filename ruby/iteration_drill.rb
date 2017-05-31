@@ -45,7 +45,7 @@ def check_list(input)
       puts "Here's #{x}!"
     else
       puts "I don't see #{x}..."
-    end
+end
   end
 end
 check_list('batteries')
