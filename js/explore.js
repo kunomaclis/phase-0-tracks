@@ -15,3 +15,9 @@ function reverseString(str) {
 }
 
 console.log(reverseString("swagbag"));
+
+var booleanReverse = reverseString("elephant")
+
+if (1 == 1) {
+    console.log(booleanReverse)
+}
