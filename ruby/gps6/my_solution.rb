@@ -10,19 +10,25 @@
 require_relative 'state_data'
 
 class VirusPredictor
-
+  # Creates instance variables for continued class use from state_data.rb
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  # Public class method that when called upon uses instance variables from initialization to run private methods.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
+  # Takes instance variables as parameters 
+  # Uses if condition from highest to lowest population density
+  # if population density meets a condition. new variable number of deaths
+  # is equal to population multipled times a fraction
+  # number_of_deaths decimal is rounded down to nearest integer
+  # print a message stating how many deaths will happen
 
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
@@ -45,6 +51,11 @@ class VirusPredictor
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
+
+    # A speed variable counter starts at 0.0
+    # Create if statement from population density
+    # The higher the population density the lower the increase of speed
+    # print a message stating how quickly the virus spreads
     speed = 0.0
 
     if @population_density >= 200
