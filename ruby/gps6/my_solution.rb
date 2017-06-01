@@ -115,3 +115,23 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# The primary difference between the tw different hashes is the fact that
+# the first key uses the second key and value when referring upon itself.
+# This is unique as in a sense there are no real differences between the two hashes
+# one just happens to use another to call upon it's own value. At first it looks like
+# there's three data structures, but because a hash by default has a key and value paired with symbols
+# the data can be called through those symbols
+
+# require_relative looks directly into the.. directory for another file to use in a program
+# require also does this. But it cannot load relative files contained in the statement
+
+# You can iterate through .each and .map. Using it's own data structures along with
+# multiple hashes
+
+# calling @ multiple times isn't necessary a best practice. if an instance variable has been
+# created making it readable along with using it without the @ cleans the code and
+# prevents potentially destructive write calls
+
+# Calling a method within in method inside of a class. The use of parameters and when they're needed
+# and not needed. I've gained a great understanding on iterating through nested data structures as well
