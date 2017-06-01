@@ -4,8 +4,9 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Require relative allows the file to interact with other files in the same directory
+# The difference between it and 'require' needs a definite path to the new file.
+
 require_relative 'state_data'
 
 class VirusPredictor

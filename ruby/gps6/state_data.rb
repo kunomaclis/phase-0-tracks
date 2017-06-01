@@ -1,6 +1,7 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+# This is a nested data structure containing two hashes. STATE_DATA uses a state name as a key, and then a value == a hash, containing the keys: :population_density & :population along with their values.
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
