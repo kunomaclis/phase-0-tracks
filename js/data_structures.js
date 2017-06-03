@@ -9,8 +9,8 @@ colors.push("pink");
 console.log(colors);
 
 function horse_color_assigner(horseName, arrayColor) {
-    var coloredHorse = {name: horseName, color: arrayColor};
-   console.log(coloredHorse);
+    var coloredHorse = { name: horseName, color: arrayColor };
+    console.log(coloredHorse);
 }
 
 // Go through the colors and horses array and randomly select a horse name and color
@@ -25,7 +25,7 @@ function Car(size, manufacturer, speed) {
     this.manufacturer = manufacturer;
     this.speed = speed;
 
-    this.zoom = function() { console.log("zoom zoom!!!"); };
+    this.zoom = function () { console.log("zoom zoom!!!"); };
 
     console.log("Car builder is a buildin!");
 }
