@@ -27,8 +27,8 @@ longestWord(["bill", "abe", "mitchell", "katherine", "ashley"]);
 function matchmaker(subject1, subject2) {
     var success = false
     // pull each value in first object
-    for (x in subject1) {
-        // compare it with with the other
+    for (let x in subject1) {
+        // compare it with the other
         if (subject1[x] === subject2[x]) {
             success = true;
         }
@@ -39,13 +39,32 @@ function matchmaker(subject1, subject2) {
  console.log(success);
 }
 
-// driver code to make it so
+// driver code to make it so, they both like pizza!
 var human1 = { age: 25, sex: "male", likes: "pizza" };
 var human2 = { age: 54, sex: "female", likes: "pizza" };
 
-matchmaker(human1, human2);
+matchmaker(human1, human2); // => true
 
 var human3 = { age: 33, sex: "male", likes: "flowers"};
 var human4 = { age: 21, sex: "female", likes: "guns"};
 
-matchmaker(human3, human4);
+matchmaker(human3, human4); // => false
+
+// random integer to word function 
+// take in integer for function input
+// return a string with integer amount of randomized words
+// words must be of random varying length
+// shove it through our longest word function
+
+function randoWord(entry) {
+var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+console.log(alphabet.length);
+console.log(entry)
+var newArray = [];
+for (var i = 0; i = entry; i++) {
+    newArray.push(alphabet[Math.random(0-52)]);
+    console.log(newArray);
+    }
+}
+
+randoWord(3)
