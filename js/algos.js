@@ -60,10 +60,16 @@ function randoWord(entry) {
     var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     console.log(entry)
     var newArray = "";
-    for (var i = 0; i < Math.floor(Math.random() * 100); i++) {
-        newArray += (alphabet[Math.floor(Math.random() * alphabet.length)]);
+    for (var start = 0; start < entry; start++) {
+    // This will generate a random string to then append to the new array variable
+    for (var i = 0; i < Math.floor(Math.random() * 250); i++) {
+    newArray += (alphabet[Math.floor(Math.random() * alphabet.length)]);
+    
+
+}
+newArray.split("g", entry);
+while (newArray >)
     }
-            console.log(newArray.split);
 
 }
 
