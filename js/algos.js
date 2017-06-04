@@ -26,20 +26,20 @@ longestWord(["bill", "abe", "mitchell", "katherine", "ashley"]);
 
 function matchmaker(subject1, subject2) {
     var success = false
-    for (var i = 0; i < 3; i++) {
-        console.log(Object.values(subject1));
-        console.log(Object.values(subject2));
-        console.log(subject1);
-        if (subject1[i] === subject2[i]) {
-            return success = true;
+    // pull each value in first object
+    for (x in subject1) {
+        // compare it with with the other
+        if (subject1[x] === subject2[x]) {
+            success = true;
         }
-        else { 
-            return success = false;
+        else {
+            success = false;
         }
     }
-    console.log(success);
+ console.log(success);
 }
 
+// driver code to make it so
 var human1 = { age: 25, sex: "male", likes: "pizza" };
 var human2 = { age: 54, sex: "female", likes: "pizza" };
 
@@ -49,5 +49,3 @@ var human3 = { age: 33, sex: "male", likes: "flowers"};
 var human4 = { age: 21, sex: "female", likes: "guns"};
 
 matchmaker(human3, human4);
-
-console.log(human1);
