@@ -58,19 +58,17 @@ matchmaker(human3, human4); // => false
 
 function randoWord(entry) {
     var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    console.log(entry)
     var newArray = "";
     for (var start = 0; start < entry; start++) {
     // This will generate a random string to then append to the new array variable
-    for (var i = 0; i < Math.floor(Math.random() * 250); i++) {
+    for (var i = 0; i < Math.floor(Math.random() * 400); i++) {
     newArray += (alphabet[Math.floor(Math.random() * alphabet.length)]);
-    
-
-}
-newArray.split("g", entry);
-while (newArray >)
+} // this is not a solid solution. I needed to break the string up into seperate entry points and couldn't find a way to make it more empiracle. Sometimes it works, sometimes it doesn't!!!
     }
-
+return newArray.split("f", entry);
+  
 }
 
-randoWord(3)
+console.log(randoWord(3))
+console.log(randoWord(10))
+
