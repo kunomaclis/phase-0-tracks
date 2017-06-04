@@ -36,7 +36,7 @@ function matchmaker(subject1, subject2) {
             success = false;
         }
     }
- console.log(success);
+    console.log(success);
 }
 
 // driver code to make it so, they both like pizza!
@@ -45,8 +45,8 @@ var human2 = { age: 54, sex: "female", likes: "pizza" };
 
 matchmaker(human1, human2); // => true
 
-var human3 = { age: 33, sex: "male", likes: "flowers"};
-var human4 = { age: 21, sex: "female", likes: "guns"};
+var human3 = { age: 33, sex: "male", likes: "flowers" };
+var human4 = { age: 21, sex: "female", likes: "guns" };
 
 matchmaker(human3, human4); // => false
 
@@ -57,14 +57,14 @@ matchmaker(human3, human4); // => false
 // shove it through our longest word function
 
 function randoWord(entry) {
-var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-console.log(alphabet.length);
-console.log(entry)
-var newArray = [];
-for (var i = 0; i = entry; i++) {
-    newArray.push(alphabet[Math.random(0-52)]);
-    console.log(newArray);
+    var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    console.log(entry)
+    var newArray = "";
+    for (var i = 0; i < Math.floor(Math.random() * 100); i++) {
+        newArray += (alphabet[Math.floor(Math.random() * alphabet.length)]);
     }
+            console.log(newArray.split);
+
 }
 
 randoWord(3)
