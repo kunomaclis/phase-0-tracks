@@ -29,11 +29,12 @@ function matchmaker(subject1, subject2) {
     for (var i = 0; i < 3; i++) {
         console.log(Object.values(subject1));
         console.log(Object.values(subject2));
+        console.log(subject1);
         if (subject1[i] === subject2[i]) {
-            success = true;
+            return success = true;
         }
         else { 
-            success = false;
+            return success = false;
         }
     }
     console.log(success);
