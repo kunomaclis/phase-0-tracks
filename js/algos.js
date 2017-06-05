@@ -60,15 +60,20 @@ function randoWord(entry) {
     var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var newArray = "";
     for (var start = 0; start < entry; start++) {
-    // This will generate a random string to then append to the new array variable
-    for (var i = 0; i < Math.floor(Math.random() * 400); i++) {
-    newArray += (alphabet[Math.floor(Math.random() * alphabet.length)]);
-} // this is not a solid solution. I needed to break the string up into seperate entry points and couldn't find a way to make it more empiracle. Sometimes it works, sometimes it doesn't!!!
+        // This will generate a random string to then append to the new array variable
+        for (var i = 0; i < Math.floor(Math.random() * 100); i++) {
+            newArray += (alphabet[Math.floor(Math.random() * alphabet.length)]);
+        } // this is not a solid solution. I needed to break the string up into seperate entry points and couldn't find a way to make it more empiracle. Sometimes it works, sometimes it doesn't!!!
+        // As it stands, I have no set way to generate an array with entry # of values. I can increase my chance of getting enough by multiplying * more than 100. But that increases the string length!
     }
-return newArray.split("f", entry);
-  
+    return (newArray.split("f", entry));
+
 }
 
-console.log(randoWord(3))
-console.log(randoWord(10))
+var firstTry = randoWord(3)
+console.log(firstTry)
+longestWord(firstTry)
+var secondTry = randoWord(10)
+console.log(secondTry)
+longestWord(secondTry)
 
