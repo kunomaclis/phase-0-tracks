@@ -1,0 +1,21 @@
+Question 2 
+
+Join all three tables in an ugly fashion: 
+SELECT * FROM users, businesses, reviews WHERE reviews.user_id = users.id
+;
+
+Question 3
+Clean up organization: 
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.comment, reviews.stars FROM reviews
+   ...> JOIN users on reviews.user_id = users.id
+   ...> JOIN businesses on reviews.business_id = businesses.id
+   ;
+
+Question 4
+SELECT businesses.name, reviews.comment, reviews.stars, users.first_name FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.name = "The Beagle Nightlclub"
+   ...> ;
+
+Jesus...
