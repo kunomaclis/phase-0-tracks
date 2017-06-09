@@ -1,15 +1,30 @@
 1. Display information in one table:
-
 select * from weapons;
+Output ----->
+1|Longsword|European two handed sword|1
+2|Shortsword|European one handed sword|1
+3|Dagger|A small blade for stabbing|1
+4|Scimitar|A curved sword developed in Eastern Countries|1
+5|Naginata|Japanese spear with a cutting edge|2
+6|Javelin|Short spear primarily used for throwing|2
+7|Pike|An extremely long spear used by frontline infantry|2
+8|Flail|Defined with a metal ball linked to a stick|3
+9|Mace|A protruding metal ball attached to a rodk|3
 
 2. Update an item that meets some condition
 
 UPDATE weapons SET description="A protruding metal ball attached to a rod" WHERE name="Mace";
 (a perfect time for a typo)
 
+New Output -----> 
+9|Mace|A protruding metal ball attached to a rod|3
+
 3. Display the information in both tables using one query
 SELECT * FROM weapons, types;
 (ugly)
+
+Output--->
+It's a huge list of them both...
 
 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
@@ -17,9 +32,55 @@ SELECT weapons.name, weapons.description, types.type FROM weapons
    ...> JOIN types ON weapons.type_id = types.id;
 (Pretty, this is two lines but is it still considered one query?)
 
+Output ------>
+Longsword|European two handed sword|blade
+Shortsword|European one handed sword|blade
+Dagger|A small blade for stabbing|blade
+Scimitar|A curved sword developed in Eastern Countries|blade
+Naginata|Japanese spear with a cutting edge|spear
+Javelin|Short spear primarily used for throwing|spear
+Pike|An extremely long spear used by frontline infantry|spear
+Flail|Defined with a metal ball linked to a stick|bludgeon
+Mace|A protruding metal ball attached to a rod|bludgeon
+
 5. Delete an item that meets some condition:
 
 DELETE FROM weapons WHERE name="Dagger";
+Dagger is no longer visible when SELECT * FROM weapons; is used
 
 Release 3:
+
+There are quite a few types of joins in SQLITE3 Inner Join, Left Outer Join, and Cross Join
+
+An example of a cross join:
+
+SELECT *
+   ...> FROM weapons
+   ...> CROSS JOIN types;
+
+   It matches each row with the other table's row
+   1|Longsword|European two handed sword|1|1|blade
+1|Longsword|European two handed sword|1|2|spear
+1|Longsword|European two handed sword|1|3|bludgeon
+2|Shortsword|European one handed sword|1|1|blade
+2|Shortsword|European one handed sword|1|2|spear
+2|Shortsword|European one handed sword|1|3|bludgeon
+4|Scimitar|A curved sword developed in Eastern Countries|1|1|blade
+4|Scimitar|A curved sword developed in Eastern Countries|1|2|spear
+4|Scimitar|A curved sword developed in Eastern Countries|1|3|bludgeon
+5|Naginata|Japanese spear with a cutting edge|2|1|blade
+5|Naginata|Japanese spear with a cutting edge|2|2|spear
+5|Naginata|Japanese spear with a cutting edge|2|3|bludgeon
+6|Javelin|Short spear primarily used for throwing|2|1|blade
+6|Javelin|Short spear primarily used for throwing|2|2|spear
+6|Javelin|Short spear primarily used for throwing|2|3|bludgeon
+7|Pike|An extremely long spear used by frontline infantry|2|1|blade
+7|Pike|An extremely long spear used by frontline infantry|2|2|spear
+7|Pike|An extremely long spear used by frontline infantry|2|3|bludgeon
+8|Flail|Defined with a metal ball linked to a stick|3|1|blade
+8|Flail|Defined with a metal ball linked to a stick|3|2|spear
+8|Flail|Defined with a metal ball linked to a stick|3|3|bludgeon
+9|Mace|A protruding metal ball attached to a rod|3|1|blade
+9|Mace|A protruding metal ball attached to a rod|3|2|spear
+9|Mace|A protruding metal ball attached to a rod|3|3|bludgeon
 
