@@ -1,0 +1,25 @@
+1. Display information in one table:
+
+select * from weapons;
+
+2. Update an item that meets some condition
+
+UPDATE weapons SET description="A protruding metal ball attached to a rod" WHERE name="Mace";
+(a perfect time for a typo)
+
+3. Display the information in both tables using one query
+SELECT * FROM weapons, types;
+(ugly)
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT weapons.name, weapons.description, types.type FROM weapons
+   ...> JOIN types ON weapons.type_id = types.id;
+(Pretty, this is two lines but is it still considered one query?)
+
+5. Delete an item that meets some condition:
+
+DELETE FROM weapons WHERE name="Dagger";
+
+Release 3:
+
