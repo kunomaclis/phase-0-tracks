@@ -55,7 +55,7 @@ puts '-' * 62
 
 done = false
 until done
-  puts "You can add, remove, edit, or review. Or tell me when you're done!"
+  puts "Please select a function: 'Add', 'Remove', 'Edit', or 'Review'. 'Done' will exit the program."
   guidance_choice = gets.chomp.downcase.strip
   going_back = ''
   done = true if guidance_choice == 'done'
@@ -67,16 +67,12 @@ until done
   # Add an item with breaks to go back
   if guidance_choice == 'add'
     until going_back == 'back'
-      puts "What item are you adding? you can also 'review' your list, or go 'back' whenever!"
+      puts "Here's the current list:"
+      print_list(db)
+      puts "What item are you adding? you can go 'back' whenever!"
       item_to_add = gets.chomp.downcase
-      if item_to_add == 'review'
-        puts "Here's the current list:"
-        print_list(db)
-        puts 'So what would you like to add?'
-        item_to_add = gets.chomp.downcase!
-      end
       break if item_to_add == 'back'
-      puts 'How many of that will you need?'
+      puts "How many #{item_to_add} will you need?"
       item_quantity = gets.chomp.downcase
       break if item_quantity == 'back'
       puts "Okay, adding #{item_quantity} #{item_to_add} to the list!"
