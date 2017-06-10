@@ -56,7 +56,7 @@ puts '-' * 62
 done = false
 until done
   puts "You can add, remove, edit, or review. Or tell me when you're done!"
-  guidance_choice = gets.chomp
+  guidance_choice = gets.chomp.downcase.strip
   going_back = ''
   done = true if guidance_choice == 'done'
   # Review list
@@ -68,53 +68,53 @@ until done
   if guidance_choice == 'add'
     until going_back == 'back'
       puts "What item are you adding? you can also 'review' your list, or go 'back' whenever!"
-      item_to_add = gets.chomp
+      item_to_add = gets.chomp.downcase
       if item_to_add == 'review'
+        puts "Here's the current list:"
         print_list(db)
         puts 'So what would you like to add?'
-        item_to_add = gets.chomp!
+        item_to_add = gets.chomp.downcase!
       end
       break if item_to_add == 'back'
       puts 'How many of that will you need?'
-      item_quantity = gets.chomp
+      item_quantity = gets.chomp.downcase
       break if item_quantity == 'back'
       puts "Okay, adding #{item_quantity} #{item_to_add} to the list!"
-      puts '*' * 40
+      puts '*' * 62
       add_item(db, item_to_add, item_quantity)
     end
   end
   # Remove an item with breaks to go back
   if guidance_choice == 'remove'
     until going_back == 'back'
-      puts "What item are you removing? you can also 'review' your list, or go 'back' whenever!"
-      item_to_remove = gets.chomp
-      if item_to_remove == 'review'
-        print_list(db)
-        puts 'So what would you like to remove?'
-        item_to_remove = gets.chomp!
-      end
+      puts "Here's the current list:"
+      print_list(db)
+      puts "What would you like to remove? Or you can go 'back' whenever"
+      item_to_remove = gets.chomp.downcase
       break if item_to_remove == 'back'
       puts "Got it, removing #{item_to_remove} from the list..."
-      puts '*' * 40
+      puts '*' * 62
       remove_item(db, item_to_remove)
     end
   end
   # Edit an existing item's quantity on the list
   next unless guidance_choice == 'edit'
   until going_back == 'back'
-    puts "What item are you editing? you can also 'review' your list, or go 'back' whenever!"
-    item_to_edit = gets.chomp
+    puts "Here's the current list:"
+    print_list(db)
+    puts "What item are you editing? you can go 'back' whenever!"
+    item_to_edit = gets.chomp.downcase
     if item_to_edit == 'review'
       print_list(db)
       puts 'so what would you like to edit?'
-      item_to_edit = gets.chomp!
+      item_to_edit = gets.chomp.downcase!
     end
     break if item_to_edit == 'back'
     puts 'and how many of that item are you going to purchase instead?'
-    item_quantity_edit = gets.chomp
+    item_quantity_edit = gets.chomp.downcase
     break if item_quantity_edit == 'back'
     puts "Okay, you're now purchasing #{item_quantity_edit} #{item_to_edit}."
-    puts '*' * 40
+    puts '*' * 62
     edit_item(db, item_to_edit, item_quantity_edit)
   end
 end
