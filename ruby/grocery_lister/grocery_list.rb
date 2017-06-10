@@ -51,8 +51,9 @@ puts '-' * 62
 
 puts 'You can add, remove, edit, or review:'
 guidance_choice = gets.chomp
+continue = ''
+# Add an item with breaks to go back
 if guidance_choice == 'add'
-  continue = ''
   until continue == 'no'
     puts 'What item would you like to add?'
     item_to_add = gets.chomp
@@ -63,6 +64,19 @@ if guidance_choice == 'add'
     puts "Okay, adding #{item_quantity} #{item_to_add} to the list!"
     add_item(db, item_to_add, item_quantity)
     puts 'Would you like to add more items?'
+    continue = gets.chomp.downcase
+    break if continue == 'no'
+  end
+end
+# Remove an item with breaks to go back
+if guidance_choice == 'remove'
+  until continue == 'no'
+    puts 'What item would you like to remove?'
+    item_to_remove = gets.chomp
+    break if item_to_remove == 'no'
+    remove_item(db, item_to_remove)
+    puts "Got it, removing #{item_to_remove} from the list..."
+    puts 'Would you like to remove more items?'
     continue = gets.chomp.downcase
     break if continue == 'no'
   end
