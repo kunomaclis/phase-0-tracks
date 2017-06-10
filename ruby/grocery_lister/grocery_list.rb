@@ -27,10 +27,12 @@ db.execute(create_table_cmd)
 
 # db.execute("INSERT INTO list (name, quantity) VALUES ('cheese', 1)")
 
-# Print full grocery list block
-list = db.execute('SELECT * FROM list')
-list.each do |item|
-  puts "#{item['quantity']} #{item['name']}"
+# Print full grocery list methods
+def print_list(db)
+  list = db.execute('SELECT * FROM list')
+  list.each do |item|
+    puts "#{item['quantity']} #{item['name']}"
+  end
 end
 
 # Methods for user interaction
@@ -49,30 +51,48 @@ puts '-' * 62
 puts "Hendee Grocery List Checker: Because it's best to be prepared!"
 puts '-' * 62
 
-puts 'You can add, remove, edit, or review:'
-guidance_choice = gets.chomp
-continue = ''
-# Add an item with breaks to go back
-if guidance_choice == 'add'
-  until continue == 'no'
-    puts 'What item would you like to add?'
-    item_to_add = gets.chomp
-    break if item_to_add == 'no'
-    puts 'How many of that will you need?'
-    item_quantity = gets.chomp
-    break if item_to_add == 'no'
-    puts "Okay, adding #{item_quantity} #{item_to_add} to the list!"
-    add_item(db, item_to_add, item_quantity)
-    puts 'Would you like to add more items?'
-    continue = gets.chomp.downcase
-    break if continue == 'no'
+done = false
+until done
+  puts "You can add, remove, edit, or review. Or tell me when you're done!"
+  guidance_choice = gets.chomp
+  continue = ''
+  done = true if guidance_choice == 'done'
+  if guidance_choice == 'review'
+    puts 'This is your grocery list:'
+    print_list(db)
   end
-end
-# Remove an item with breaks to go back
-if guidance_choice == 'remove'
+  # Add an item with breaks to go back
+  if guidance_choice == 'add'
+    until continue == 'no'
+      puts "What item would you like to add? Or would you like to 'review' the list before proceeding?"
+      item_to_add = gets.chomp
+      if item_to_add == 'review'
+        print_list(db)
+        puts 'So what would you like to add?'
+        item_to_add = gets.chomp!
+      end
+
+      break if item_to_add == 'no'
+      puts 'How many of that will you need?'
+      item_quantity = gets.chomp
+      break if item_to_add == 'no'
+      puts "Okay, adding #{item_quantity} #{item_to_add} to the list!"
+      add_item(db, item_to_add, item_quantity)
+      puts 'Would you like to add more items?'
+      continue = gets.chomp.downcase
+      break if continue == 'no'
+    end
+  end
+  # Remove an item with breaks to go back
+  next unless guidance_choice == 'remove'
   until continue == 'no'
-    puts 'What item would you like to remove?'
+    puts "What item would you like to remove? Or would you like to 'review' the list before proceeding?"
     item_to_remove = gets.chomp
+    if item_to_remove == 'review'
+      print_list(db)
+      puts 'So what would you like to remove?'
+      item_to_remove = gets.chomp!
+    end
     break if item_to_remove == 'no'
     remove_item(db, item_to_remove)
     puts "Got it, removing #{item_to_remove} from the list..."
@@ -81,3 +101,6 @@ if guidance_choice == 'remove'
     break if continue == 'no'
   end
 end
+
+puts "Have a nice day! Remember your list:"
+print_list(db)
