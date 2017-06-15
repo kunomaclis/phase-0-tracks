@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'sqlite3'
 
-db = SQLite3::Database.new("students.db")
+db = SQLite3::Database.new('students.db')
 db.results_as_hash = true
 
 # write a basic GET route
@@ -26,8 +26,8 @@ end
 # write a GET route that retrieves
 # all student data
 get '/students' do
-  students = db.execute("SELECT * FROM students")
-  response = ""
+  students = db.execute('SELECT * FROM students')
+  response = ''
   students.each do |student|
     response << "ID: #{student['id']}<br>"
     response << "Name: #{student['name']}<br>"
@@ -41,6 +41,26 @@ end
 # a particular student
 
 get '/students/:id' do
-  student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
+  student = db.execute('SELECT * FROM students WHERE id=?', [params[:id]])[0]
   student.to_s
+end
+
+# Contact router that displays an address
+
+get '/contact' do
+  'Our address is 1234 YadaYada Way. Austin, TX'
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    'Good job!'
+    end
+end
+
+get '/:num1/:num2' do
+  sum = params[:num1].to_i + params[:num2].to_i
+  "The total is #{sum}"
 end

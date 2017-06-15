@@ -6,11 +6,20 @@
 <body>
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
+  <p>Joing our <a href="mailing_list/new">mailing list</a> 
   <p>Click <a href="students/new">here</a> to create a new student.</p>
   <ul>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>
     <% end %>
   </ul>
+
+  <h2>Current Emails (cuz who cares about security?)</h2>
+  <ul>
+  <% @mailing_list.each do |email| %>
+    <li><%= email['name']%>, <%= email['email'] %></li>
+    <% end %>
+    </body>
+    
 </body>
 </html>
