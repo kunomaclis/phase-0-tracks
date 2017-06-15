@@ -59,3 +59,8 @@ get '/great_job' do
     'Good job!'
     end
 end
+
+get '/:num1/:num2' do
+  sum = params[:num1].to_i + params[:num2].to_i
+  "The total is #{sum}"
+end
