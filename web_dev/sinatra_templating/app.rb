@@ -10,6 +10,7 @@ db.results_as_hash = true
 # show students on the home page
 get '/' do
   @students = db.execute("SELECT * FROM students")
+  @mailing_list = db.execute("SELECT * FROM mailing_list")
   erb :home
 end
 
@@ -27,6 +28,13 @@ end
 # add static resources
 
 # create mailing_list
-get '/mailing_list' do 
+get '/mailing_list/new' do 
   erb :mailing_list
+end
+
+# Create new mailing list via form
+
+post '/mailing_list' do 
+  db.execute("INSERT INTO mailing_list (name, email) VALUES (?,?)", [params['name'], params['email']])
+  redirect '/'
 end
