@@ -25,3 +25,8 @@ post '/students' do
 end
 
 # add static resources
+
+# create mailing_list
+get '/mailing_list' do 
+  erb :mailing_list
+end
