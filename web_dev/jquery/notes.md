@@ -10,3 +10,4 @@
 
 * I love W33.
 
+* Coding alongside W33 examples gave me a great indication of how best to implement a new technology. JQuery is hugggggge and I have a lot to learn. But thankfully I'll fully understand where to look if I'm having trouble implementing some functionality. 
