@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").on({
+                click: function () {
+                    $("p").hide();
+                },
+
+                mouseup: function () {
+                    alert("Begone, Ps!");
+                }
+            });
+
+            $("h3").hover(function(){
+                $("h3").css("color", "blue").slideDown(500).slideUp(2000);
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <p>This is me saying hello</p>
+    <p>I'm also saying hello here</p>
+    <p>what if we did some cool things to these after clicking on them?</p>
+    <h3>yeah</h3>
+    <button>Lets hide those paragraphs...</button>
+</body>
+
+</html>
+
